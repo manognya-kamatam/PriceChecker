@@ -2,9 +2,11 @@ import json
 
 import requests
 
+st = ''
+with open(".file") as s:
+    st = st.read()
 
-st = 'Sony WH-1000XM3'
-# set up the request parameters
+
 params = {
     'api_key': '25D582A47BE04CB9BA5FBD93890254B7',
     'type': 'search',
