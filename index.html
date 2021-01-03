@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Site name</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet">
+  <link rel="icon" href="shopping-cart.png">
+</head>
+
+<body>
+  <div class="top-container">
+
+    <div class="title-text">
+      <h1>We are BLA</h1>
+      <h2>we help you bla bla bla.</h2>
+    </div>
+
+    <img class="family" src="images/family.png" alt="img">
+    <!--<img class="a3" src="images/christmas-bell.png" alt="img">
+    <img class="a4" src="images/christmas-wreath.png" alt="img">
+    <img class="a5" src="images/night.png" alt="img">
+    <img class="a6" src="images/fireworks.png" alt="img">
+    <img class="a7" src="images/santa-claus.png" alt="img">
+    <img class="a8" src="images/santa-claus1.png" alt="img">
+    <img class="a9" src="images/santa-claus2.png" alt="img">
+    <img class="a10" src="images/santa-claus3.png" alt="img">
+    <img class="a11" src="images/firework.png" alt="img">
+-->
+  </div>
+
+  <div class="middle-container">
+    <div class="profile">
+      <img src="https://gph.is/g/ZnXW1dK" alt="excited-gif">
+      <h2>Yay! Shop with us.</h2>
+      <p class="intro">Give us a chance and we'll make it worthwhile. Search for the items in your shopping list here! </p>
+    </div>
+    <br>
+    <br>
+      <div class="margin">
+        <input type="search" id="mySearch" name="q"
+        placeholder="Search the site..."  >
+      </div>
+      <script>
+      function userinput() {
+          var input = document.getElementById("mySearch").value;
+          alert(input);
+      }
+      const fs = require('fs');
+
+let writeStream = fs.createWriteStream('userinput.txt');
+
+writeStream.write(input);
+
+
+// the finish event is emitted when all data has been flushed from the stream
+writeStream.on('finish', () => {
+    console.log('wrote all data to file');
+});
+
+// close the stream
+writeStream.end();
+      </script>
+      <div class="contact-me">
+        <a class="btn" href="bla bla bla">Search</a>
+      </div>
+
+    </div>
+    <hr>
+    <div class="contact-me">
+      <h2>Get In Touch</h2>
+      <h3>with our team</h3>
+      <p class="contact-message">BLA BLA BLA</p>
+      <a class="footer-link" href="about and contact.html">ABOUT US</a>
+    </div>
+  </div>
+<br>
+<br>
+
+  <div class="bottom-container">
+
+  </div>
+</body>
+
+</html>
