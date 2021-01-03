@@ -2,40 +2,41 @@ import json
 
 import requests
 
+# Reading the File with the search term User entered
 st = ''
-with open(".file") as s:
-    st = st.read()
+# with open(".file") as s:
+#     st = s.read()
 
 
 params = {
     'api_key': '25D582A47BE04CB9BA5FBD93890254B7',
     'type': 'search',
     'amazon_domain': 'amazon.com',
-    'search_term': st
+    'search_term': st,
+    'sort_by': 'featured'
 }
 
 # make the http GET request to Rainforest API
 api_result = requests.get('https://api.rainforestapi.com/request', params)
 
-# print the JSON response from Rainforest API
+# store the JSON response from Rainforest API
 file = json.dumps(api_result.json())
 
-f = open("data.json", "w+")
-f.write(file)
-f.close()
 
+d = json.loads(file)
 
-with open('data.json') as g:
-    d = json.load(g)
-
+# storing only the Search Results
 searchresults = d["search_results"]
 
+# making arrays for all values needed from search results
 prices = []
 links = []
 names = []
+
+# getting values needed and storing in arrays
 for p in range(len(searchresults)):
     products = searchresults[p]
-    print(products)
+
     if 'price' in products:
         if 'link' in products:
             price = products['price']
@@ -47,14 +48,14 @@ for p in range(len(searchresults)):
             name = products['title']
             names.append(name)
 
-
 data = {
-  'price': prices,
-  'link': links,
-  'name': names
+    'name': names,
+    'price': prices,
+    'link': links
+
 }
 
 FilteredData = json.dumps(data)
 FD = open("FD.json", "w+")
 FD.write(FilteredData)
-f.close()
+FD.close()
